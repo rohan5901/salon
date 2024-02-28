@@ -1,0 +1,6 @@
+{
+    "java.project.sourcePaths": [
+        "backend/salon/src/main/java/com/example/demo"
+    ],
+    "java.configuration.updateBuildConfiguration": "interactive"
+}
