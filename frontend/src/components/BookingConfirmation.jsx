@@ -1,23 +1,19 @@
-// BookingConfirmation.jsx
-
 import React from 'react';
 
-const BookingConfirmation = ({ 
-  selectedSubCategories, 
-  selectedSlot, 
-  handleConfirmation 
-}) => {
+const BookingConfirmation = ({ selectedSubCategories, selectedSlot, handleBack, handleConfirmation, selectedDateTime }) => {
   return (
     <div>
-      {/* Selected Sub-Categories */}
+      <button onClick={handleBack} className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded mb-4">
+        Back
+      </button>
       <div className="flex flex-wrap mb-4">
         {Object.values(selectedSubCategories).map((subcategory, index) => (
           <div key={index} className="bg-gray-200 rounded-full px-3 py-1 m-1 flex items-center">
-            <span className="mr-1">{subcategory.name}</span>
+            <span className="mr-1">{subcategory.name} - {subcategory.selectedStaff.name}</span>
           </div>
         ))}
       </div>
-      <p>Slot: {selectedSlot}</p>
+      <p>{selectedDateTime.toLocaleString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })} at {selectedSlot}</p>
       {/* Input fields */}
       <div className="mt-4">
         <label className="block mb-2">
