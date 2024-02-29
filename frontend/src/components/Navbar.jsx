@@ -32,7 +32,7 @@ const Navbar = () => {
       } w-full flex items-center py-5 fixed top-0 z-20 bg-white`}
     >
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
-        <Link
+        {/* <Link
           to='/'
           className='flex items-center gap-2'
           onClick={() => {
@@ -42,7 +42,7 @@ const Navbar = () => {
         >
           <img src={logo} alt='logo' className='w-99 h-99 object-contain' />
 
-        </Link>
+        </Link> */}
 
         <ul className='list-none hidden sm:flex flex-row gap-8'>
           {navLinks.map((nav) => (
