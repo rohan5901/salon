@@ -60,7 +60,7 @@ export const getMonthYearDisplay = (currentStartDate) => {
   };
   
   export const handleCategorySelect = (category, setSelectedCategory, setStep) => {
-    setSelectedCategory(category.id === selectedCategory ? null : category.id);
+    setSelectedCategory(category.id === setSelectedCategory ? null : category.id);
     setStep(1);
   };
   

@@ -23,4 +23,6 @@ public class SubCategory {
 
     private Integer durationInMinutes;
 
+    private Integer[] stylistOffering;
+
 }

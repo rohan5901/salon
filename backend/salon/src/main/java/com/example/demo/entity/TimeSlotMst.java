@@ -1,6 +1,7 @@
 package com.example.demo.entity;
 
 import java.sql.Time;
+import java.util.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,16 +13,12 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @Entity
-public class WorkingDays {
+public class TimeSlotMst {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String day;
-
     private Time startTime;
 
     private Time endTime;
-
-    private Boolean status;
 }

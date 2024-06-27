@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @Entity
-public class StylistDetails {
+public class Stylist {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

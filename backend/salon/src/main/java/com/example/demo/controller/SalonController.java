@@ -3,15 +3,19 @@ package com.example.demo.controller;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.dto.BookAppointmentRequest;
+import com.example.demo.dto.NonAvailableSlotsRequest;
 import com.example.demo.entity.CategoryMst;
 import com.example.demo.entity.SubCategory;
 import com.example.demo.repository.CategoryMstRepository;
 import com.example.demo.repository.SubCategoryRepository;
 import com.example.demo.service.SalonService;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -34,7 +38,6 @@ public class SalonController {
     @PostMapping("/createCategory")
     public List<CategoryMst> createCategories(@RequestBody String[] categoryNameArray) {
         List<CategoryMst> categoryList = new ArrayList();
-        ;
         for (String category : categoryNameArray) {
             CategoryMst categoryMst = new CategoryMst();
             categoryMst.setCategoryName(category);
@@ -70,8 +73,23 @@ public class SalonController {
     }
 
     @PostMapping("/getBookedSlots")
-    public Object getBookedSlots(@RequestBody String date) {
-        return salonService.bookedSlots(date);
+    public Object getBookedSlots(@RequestBody LocalDate curDate) {
+        return salonService.bookedSlots(curDate);
     }
+
+    @PostMapping("/getNonAvailableSlots")
+    public Map<LocalDate, Set<Integer>> getNonAvailableSlots(@RequestBody NonAvailableSlotsRequest payload) {
+        try {
+            return salonService.getNonAvailableSlots(payload);
+        } catch (Exception e) {
+            System.out.println("error---------->" + e);
+            return null;
+        }
+    }
+
+    // @PostMapping("getAvailableSlots")
+    // public Map<LocalDate, Object> getAvailableSlots() {
+
+    // }
 
 }

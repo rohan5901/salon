@@ -1,6 +1,6 @@
 {
-    "java.project.sourcePaths": [
-        "backend/salon/src/main/java/com/example/demo"
-    ],
-    "java.configuration.updateBuildConfiguration": "interactive"
+  "java.project.sourcePaths": ["backend/salon/src/main/java/com/example/demo"],
+  "java.configuration.updateBuildConfiguration": "interactive",
+  "java.compile.nullAnalysis.mode": "automatic",
+  "java.debug.settings.onBuildFailureProceed": true
 }

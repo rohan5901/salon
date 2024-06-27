@@ -1,8 +1,5 @@
 package com.example.demo.entity;
 
-import java.sql.Time;
-import java.util.Date;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,12 +10,14 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @Entity
-public class TimeSlots {
+public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private Time startTime;
+    private String name;
 
-    private Time endTime;
+    private String mobile;
+
+    private String email;
 }

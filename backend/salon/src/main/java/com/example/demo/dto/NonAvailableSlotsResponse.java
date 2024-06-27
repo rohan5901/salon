@@ -10,11 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class BookAppointmentRequest {
-    private Integer clientId;
-    private Integer stylistId;
-    private Integer startTimeSlotId;
-    private Integer endTimeSlotId;
+public class NonAvailableSlotsResponse {
     private LocalDate appointmentDate;
-    private Integer subCategoryId;
+    private Integer[] nonAvailableSlots;
 }

@@ -16,6 +16,4 @@ public class CategoryMst {
     private Integer id;
 
     private String categoryName;
-
-    private String stylistsOffering;
 }
